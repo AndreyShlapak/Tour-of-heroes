@@ -12,7 +12,7 @@ import { MessageService } from '../message.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(protected heroService: HeroService) { }
 
   ngOnInit(): void {
     this.getHeroes();
@@ -32,8 +32,8 @@ export class HeroesComponent implements OnInit {
       });
   }
 
-  delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero.id).subscribe();
+  deleteHero(id: number) {
+    this.heroes = this.heroes.filter((item) => item.id !== id);
+    this.heroService.deleteHero(id).subscribe();
   }
 }
