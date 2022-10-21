@@ -1,5 +1,5 @@
 /* Application-wide Styles */
-h1 {
+/*h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
@@ -36,9 +36,15 @@ button:disabled {
   background-color: #eee;
   color: #aaa;
   cursor: auto;
-}
+}*/
 
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/*input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+}*/
