@@ -1,33 +1,30 @@
-<form class="card" [formGroup]="form" (ngSubmit)="submit()">
-  <h1>Registration Form</h1>
+<div class="container">
+  <form class="registration-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-registration-form-field
+      label="First name"
+      placeHolder="Ex. Andryi"
+      [control]="form.controls['firstName']">
+    </app-registration-form-field>
 
-  <mat-form-field>
-    <mat-label>Something</mat-label>
-    <input matInput>
-  </mat-form-field>
+    <app-registration-form-field
+      label="Last name"
+      placeHolder="Ex. Shlapak"
+      [control]="form.controls['lastName']"
+      inputType="password"
+    ></app-registration-form-field>
 
-  <mat-form-field class="example-form-field" appearance="fill">
-    <mat-label>First name</mat-label>
-    <input matInput type="text" formControlName="firstName">
-  </mat-form-field>
+    <app-registration-form-field
+      label="City"
+      placeHolder="Ex. Kyiv"
+      [control]="form.controls['city']"
+    ></app-registration-form-field>
 
-  <div class="form-control">
-    <label>Last Name</label>
-    <input type="text" formControlName="lastName">
-    <div class="validation"></div>
-  </div>
+    <app-registration-form-field
+      label="Age"
+      placeHolder="Ex. 18"
+      [control]="form.controls['age']"
+    ></app-registration-form-field>
 
-  <div class="form-control">
-    <label>City</label>
-    <input type="text"  formControlName="city">
-    <div class="validation"></div>
-  </div>
-
-  <div class="form-control">
-    <label>Years old</label>
-    <input type="text"  formControlName="yearsOld">
-    <div class="validation"></div>
-  </div>
-
-  <button class="btn" type="submit" [disabled]="form.invalid">Register</button>
-</form>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>

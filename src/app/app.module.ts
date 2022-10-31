@@ -17,30 +17,36 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HeroSearchComponent} from "./hero-search/hero-search.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {HeroesComponent} from "./heroes/heroes.component";
+import {MatIconModule} from "@angular/material/icon";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RegistrationFormFieldComponent} from "./registration-form-field/registration-form-field.component";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent,
+    RegistrationFormFieldComponent,
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
     RegistrationComponent,
-    HeroesComponent
   ],
   imports: [
     HeroesModule,
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+      InMemoryDataService, {dataEncapsulation: false}
+    ),
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
