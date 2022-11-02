@@ -5,16 +5,11 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   templateUrl: './registration-form-field.component.html',
   styleUrls: ['./registration-form-field.component.scss']
 })
-export class RegistrationFormFieldComponent implements OnInit{
+export class RegistrationFormFieldComponent {
   @Input() control;
   @Input() inputType: string = 'text';
   @Input() label: string;
   @Input() placeHolder: string;
-
-
-  ngOnInit(): void {
-
-  }
 
   getErrorMessage() {
     if (this.control.hasError('min')) {
